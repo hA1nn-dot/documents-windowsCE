@@ -57,11 +57,13 @@ namespace Documentos.Connection
             string barcode = txtBarcode.Text;
             txtBarcode.Text = "";
             Document doc = Document.getInstance();
+            int i = 0;
             foreach (Product producto in doc.getListProducts()) {
                 if (producto.getBarcode() == barcode || producto.getClave() == barcode)
                 {
-                    MessageBox.Show("selected");
+                    listProducts.Items[i].Checked = true;
                 }
+                i++;
             }
             
             
@@ -94,7 +96,7 @@ namespace Documentos.Connection
 
         private void btnCleanFields_Click(object sender, EventArgs e)
         {
-            listProducts.Clear();
+            listProducts.Items.Clear();
             documentTypeLabel.Text = "";
             clientNameLabel.Text = "";
             razonSocialLabel.Text = "";
