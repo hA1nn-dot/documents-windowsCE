@@ -1,0 +1,9 @@
+C:\Users\hgq_2\Desktop\Documentos\Documentos\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\hgq_2\Desktop\Documentos\Documentos\obj\Debug\Documentos.Connection.Form1.resources
+C:\Users\hgq_2\Desktop\Documentos\Documentos\obj\Debug\Documentos.Properties.Resources.resources
+C:\Users\hgq_2\Desktop\Documentos\Documentos\obj\Debug\Documentos.csproj.GenerateResource.Cache
+C:\Users\hgq_2\Desktop\Documentos\Documentos\bin\Debug\Documentos.exe
+C:\Users\hgq_2\Desktop\Documentos\Documentos\bin\Debug\Documentos.pdb
+C:\Users\hgq_2\Desktop\Documentos\Documentos\bin\Debug\System.Data.SqlClient.dll
+C:\Users\hgq_2\Desktop\Documentos\Documentos\obj\Debug\Documentos.exe
+C:\Users\hgq_2\Desktop\Documentos\Documentos\obj\Debug\Documentos.pdb
