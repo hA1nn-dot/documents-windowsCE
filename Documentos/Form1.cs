@@ -32,7 +32,7 @@ namespace Documentos.Connection
 
         private void txtDocument_KeyPress(object sender, KeyPressEventArgs e) 
         {
-            if ((int)e.KeyChar == (int)Keys.Enter) {
+            if ((int)e.KeyChar == (int)Keys.Enter && txtDocument.Text != "") {
                 string documentID = txtDocument.Text.ToString().Trim();
                 try
                 {
@@ -41,8 +41,12 @@ namespace Documentos.Connection
                     printDocumentInformation();
                     printProducts();
                 }
-                catch (SqlException err) {
-                    MessageBox.Show(err.Message.ToString());
+                catch (SqlException err)
+                {
+                    MessageBox.Show(err.Message.ToString(),"Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation,MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception errorGenerado) {
+                    MessageBox.Show(errorGenerado.Message.ToString(), "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 }
                 
             }
@@ -58,14 +62,16 @@ namespace Documentos.Connection
             txtBarcode.Text = "";
             Document doc = Document.getInstance();
             int i = 0;
+            bool productFound = false;
             foreach (Product producto in doc.getListProducts()) {
                 if (producto.getBarcode() == barcode || producto.getClave() == barcode)
                 {
                     listProducts.Items[i].Checked = true;
+                    productFound = true;
                 }
                 i++;
             }
-            
+            if (!productFound) MessageBox.Show("Producto no encontrado en el documento","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation,MessageBoxDefaultButton.Button1);
             
 
         }
