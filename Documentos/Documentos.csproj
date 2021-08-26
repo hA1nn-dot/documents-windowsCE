@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Connection\xmlConfiguration.cs" />
     <Compile Include="Document.cs" />
+    <Compile Include="DocumentType.cs" />
     <Compile Include="IProduct.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="SQLConnection.cs" />

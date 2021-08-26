@@ -12,7 +12,7 @@ namespace Documentos
         private string clientName;
         private string documentType;
         private string razonSocial;
-
+        
         private Document()
         {
             if (listProducts != null) {
@@ -45,6 +45,20 @@ namespace Documentos
         public List<Product> getListProducts() {
             return listProducts;
         }
+
+        public int getIndexIsProductExists(string code) {
+            int indexProduct = 0;
+            foreach (Product producto in getListProducts())
+            {
+                if (producto.getBarcode() == code || producto.getClave() == code)
+                {
+                    return indexProduct;
+                }
+                indexProduct++;
+            }
+            return -1;
+        }
+
         public string getClientName() {
             return clientName;
         }
